@@ -1,0 +1,748 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #faecd6;
+    --green-primary: #4a6914;
+    --green-purchased: #6B8E23;
+    --peach: #dfb8a2;
+    --text-dark: #27221e;
+    --text-light: #655a4f;
+    --white: #FFFFFF;
+    --content-max-width: 1200px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 12px 0;
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background-image: url('../assets/avatar_2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #DCE1E8;
+    border-radius: 50%;
+}
+
+
+.coin-counter {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--peach);
+    padding: 6px 12px;
+    border-radius: 24px;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--white);
+    min-width: 80px;
+    justify-content: center;
+}
+
+.coin-counter span {
+    color: var(--white);
+    font-weight: 700;
+    min-width: 20px;
+    text-align: right;
+}
+
+.coin-counter__icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+
+.app-main {
+    flex-grow: 1;
+    padding: 20px 12px;
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+}
+
+
+.week-days {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 5px;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    flex: 1;
+}
+
+.circle {
+    width: 100%;
+    max-width: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.circle.active {
+    background-color: var(--green-primary);
+}
+
+
+.task-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.time-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #655a4f;
+}
+
+.task-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 67px;
+    padding: 10px 20px 10px 14px;
+    border-radius: 0 24px 24px 0;
+    background: #dfb8a2;
+}
+
+.task-card__checkbox {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    border: 2px dotted #6d5c50;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.task-card__checkbox.checked {
+    border: none;
+    background-image: url('ok.png');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.task-card__image {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #25252a;
+    overflow: hidden;
+}
+
+.task-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.task-card__name {
+    flex-grow: 1;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.task-card__price {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.task-card__coin {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+
+.screen-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.rewards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.reward-card {
+    background-color: var(--peach);
+    border-radius: 24px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 220px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.reward-card:not(.purchased):hover {
+    transform: translateY(-4px);
+}
+
+.reward-card__image {
+    width: 100%;
+    height: 100px;
+    max-height: 120px;
+    background-color: #DCE1E8;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 8px;
+}
+
+.reward-card__image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.reward-card__name {
+    font-size: 13px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+.reward-card__price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    height: 28px;
+    overflow: hidden;
+}
+
+.reward-card__coin {
+    width: 24px;
+    height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.reward-card.purchased {
+    background-color: var(--green-purchased);
+}
+
+.reward-card.purchased .reward-card__name,
+.reward-card.purchased .reward-card__price {
+    color: var(--white);
+}
+
+.reward-card.purchased .reward-card__image {
+    opacity: 0.9;
+}
+
+.reward-card.purchased .reward-card__coin {
+    filter: brightness(1.1);
+}
+
+.pet-title {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+}
+
+.pet-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0;
+    min-height: 200px;
+}
+
+.pet-image {
+    max-width: 100%;
+    max-height: 280px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.pet-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: #DCE1E8;
+    border-radius: 24px;
+    padding: 12px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    max-height: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-card.active {
+    background-color: #6B8E23; 
+}
+
+.stat-card.active .stat-card__icon {
+    filter: brightness(1.2);
+}
+
+.stat-card.locked {
+    opacity: 0.35;
+    filter: grayscale(1);
+}
+
+.stat-card__icon {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+@media (min-width: 600px) {
+    .pet-title {
+        font-size: 22px;
+    }
+    .pet-image {
+        max-height: 360px;
+    }
+    .stat-card {
+        max-height: 120px;
+    }
+    .progress-bar {
+        height: 16px;
+    }
+    .progress-labels {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .pet-title {
+        font-size: 26px;
+        margin-bottom: 24px;
+    }
+    .pet-image {
+        max-height: 480px;
+    }
+    .stat-card {
+        max-height: 160px;
+        border-radius: 32px;
+    }
+    .progress-bar {
+        height: 20px;
+        border-radius: 10px;
+    }
+    .progress-fill {
+        border-radius: 10px;
+    }
+    .progress-labels {
+        font-size: 16px;
+    }
+}
+
+.site-footer {
+    background: #4a6914;
+    min-height: 56px;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navigation {
+    width: 450px;
+    max-width: 100%;
+    padding: 7px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navigation__item {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f8eddc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s;
+    overflow: hidden;
+}
+
+.navigation__item:hover {
+    transform: scale(1.08);
+}
+
+.navigation__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 500px) {
+    .task-card {
+        gap: 8px;
+        padding-right: 12px;
+    }
+
+    .task-card__name {
+        font-size: 16px;
+    }
+}
+
+
+@media (min-width: 600px) {
+    .rewards-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .profile {
+        font-size: 16px;
+    }
+
+    .avatar {
+        width: 48px;
+        height: 48px;
+    }
+
+    .coin-counter {
+        padding: 8px 16px;
+        font-size: 18px;
+        min-width: 100px;
+    }
+
+    .coin-counter__icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .day {
+        font-size: 13px;
+    }
+
+    .circle {
+        max-width: 48px;
+        font-size: 18px;
+    }
+
+    .time-title {
+        font-size: 16px;
+    }
+
+    .task-card {
+        gap: 18px;
+        padding: 14px 24px 14px 18px;
+        min-height: 80px;
+    }
+
+    .task-card__checkbox,
+    .task-card__image {
+        width: 56px;
+        height: 56px;
+        flex: 0 0 56px;
+    }
+
+    .task-card__name {
+        font-size: 20px;
+    }
+
+    .task-card__price {
+        font-size: 18px;
+    }
+
+    .task-card__coin {
+        width: 26px;
+        height: 26px;
+    }
+
+    .screen-title {
+        font-size: 32px;
+    }
+
+    .reward-card {
+        min-height: 240px;
+    }
+
+    .reward-card__price {
+        font-size: 20px;
+        height: 30px;
+    }
+
+    .reward-card__coin {
+        width: 26px;
+        height: 26px;
+        max-width: 26px;
+        max-height: 26px;
+    }
+
+    .reward-card__name {
+        font-size: 14px;
+    }
+
+    .pet-title {
+        font-size: 22px;
+    }
+
+    .stat-card {
+        font-size: 13px;
+        padding: 20px 12px;
+    }
+
+    .pet-placeholder {
+        max-width: 400px;
+        height: 320px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .app-header {
+        padding: 30px 40px 0;
+    }
+
+    .app-main {
+        padding: 30px 40px;
+    }
+
+    .profile {
+        font-size: 18px;
+    }
+
+    .avatar {
+        width: 56px;
+        height: 56px;
+    }
+
+    .coin-counter {
+        padding: 10px 20px;
+        font-size: 22px;
+        min-width: 120px;
+        gap: 10px;
+    }
+
+    .coin-counter__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .week-days {
+        margin-bottom: 40px;
+        gap: 12px;
+    }
+
+    .day {
+        font-size: 15px;
+    }
+
+    .circle {
+        max-width: 56px;
+        font-size: 22px;
+    }
+
+    .time-title {
+        font-size: 18px;
+    }
+
+    .task-section {
+        gap: 16px;
+    }
+
+    .task-card {
+        gap: 24px;
+        padding: 16px 32px 16px 24px;
+        min-height: 96px;
+        border-radius: 0 32px 32px 0;
+    }
+
+    .task-card__checkbox,
+    .task-card__image {
+        width: 64px;
+        height: 64px;
+        flex: 0 0 64px;
+    }
+
+    .task-card__name {
+        font-size: 22px;
+    }
+
+    .task-card__price {
+        font-size: 20px;
+        gap: 6px;
+    }
+
+    .task-card__coin {
+        width: 30px;
+        height: 30px;
+    }
+
+    .screen-title {
+        font-size: 40px;
+        margin-bottom: 32px;
+    }
+
+    .rewards-grid {
+        gap: 24px;
+    }
+
+    .reward-card {
+        min-height: 280px;
+        padding: 24px;
+        border-radius: 32px;
+    }
+
+    .reward-card__image {
+        height: 140px;
+        max-height: 160px;
+        border-radius: 20px;
+    }
+
+    .reward-card__price {
+        font-size: 22px;
+        height: 34px;
+        gap: 8px;
+    }
+
+    .reward-card__coin {
+        width: 30px;
+        height: 30px;
+        max-width: 30px;
+        max-height: 30px;
+    }
+
+    .reward-card__name {
+        font-size: 16px;
+    }
+
+    .pet-title {
+        font-size: 26px;
+        margin-bottom: 24px;
+    }
+
+    .pet-placeholder {
+        max-width: 500px;
+        height: 400px;
+        border-radius: 48px;
+    }
+
+    .stat-card {
+        font-size: 15px;
+        padding: 24px 16px;
+    }
+
+    .progress-bar {
+        height: 14px;
+        border-radius: 7px;
+    }
+
+    .progress-labels {
+        font-size: 14px;
+    }
+
+    .navigation {
+        width: 600px;
+        padding: 12px 40px;
+    }
+
+    .navigation__item {
+        width: 56px;
+        height: 56px;
+    }
+
+    .site-footer {
+        min-height: 80px;
+    }
+}
+
+@media (min-width: 1440px) {
+    :root {
+        --content-max-width: 1400px;
+    }
+
+    .task-card__name {
+        font-size: 24px;
+    }
+
+    .pet-placeholder {
+        max-width: 600px;
+        height: 480px;
+    }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Расписание</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="app-header">
+    <div class="profile">
+        <div class="avatar"></div>
+        <span>Гоша</span>
+    </div>
+    <div class="coin-counter">
+        <span id="coin-count">0</span>
+        <img src="assets/ic_coin.png" alt="Монета" class="coin-counter__icon">
+    </div>
+</header>
+
+    <main class="app-main">
+        <div class="week-days">
+            <div class="day"><span>ПН</span><div class="circle">1</div></div>
+            <div class="day"><span>ВТ</span><div class="circle active">2</div></div>
+            <div class="day"><span>СР</span><div class="circle">3</div></div>
+            <div class="day"><span>ЧТ</span><div class="circle">4</div></div>
+            <div class="day"><span>ПТ</span><div class="circle">5</div></div>
+            <div class="day"><span>СБ</span><div class="circle">6</div></div>
+            <div class="day"><span>ВС</span><div class="circle">7</div></div>
+        </div>
+
+<section class="task-section">
+    <h2 class="time-title">вечер</h2>
+
+    <article class="task-card">
+        <button
+            class="task-card__checkbox"
+            type="button"
+            data-id="task1"
+            data-coins = "15"
+            aria-label="Отметить задачу выполненной"
+        ></button>
+
+        <div class="task-card__image">
+            <img src="assets/task_icon_1.png" alt="Иконка задачи">
+        </div>
+
+        <div class="task-card__name">Протереть стол</div>
+
+        <div class="task-card__price">
+            <span>15</span>
+            <img class="task-card__coin" src="assets/ic_coin.png" alt="Монета">
+        </div>
+    </article>
+
+    <article class="task-card">
+        <button
+            class="task-card__checkbox"
+            type="button"
+            data-id="task2"
+            data-coins="30"
+            aria-label="Отметить задачу выполненной"
+        ></button>
+
+        <div class="task-card__image">
+            <img src="assets/task_icon_3.png" alt="Иконка задачи">
+        </div>
+
+        <div class="task-card__name">Помыть посуду</div>
+
+        <div class="task-card__price">
+            <span>30</span>
+            <img class="task-card__coin" src="assets/ic_coin.png" alt="Монета">
+        </div>
+    </article>
+
+    <article class="task-card">
+        <button
+            class="task-card__checkbox"
+            type="button"
+            data-id="task3"
+            data-coins="50"
+            aria-label="Отметить задачу выполненной"
+        ></button>
+
+        <div class="task-card__image">
+            <img src="assets/task_icon_2.png" alt="Иконка задачи">
+        </div>
+
+        <div class="task-card__name">Протереть пыль</div>
+
+        <div class="task-card__price">
+            <span>50</span>
+            <img class="task-card__coin" src="assets/ic_coin.png" alt="Монета">
+        </div>
+    </article>
+</section>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="navigation" aria-label="Нижнее меню">
+            <a class="navigation__item" href="index.html" aria-label="Задачи">
+                <img src="assets/галка.png" alt="Задачи">
+            </a>
+            <a class="navigation__item" href="rewards.html" aria-label="Награды">
+                <img src="assets/звезда.png" alt="Награды">
+            </a>
+            <a class="navigation__item" href="pet.html" aria-label="Настройка">
+                <img src="assets/пэт.png" alt="Настройка">
+            </a>
+        </nav>
+    </footer>
+<script src="js/common.js"></script>
+<script src="js/tasks.js"></script>
+</body>
+</html>

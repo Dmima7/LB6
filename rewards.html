@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Награды</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="profile">
+            <div class="avatar"></div>
+            <span>Гоша</span>
+        </div>
+        <div class="coin-counter">
+            <span id="coin-count">0</span>
+            <img src="assets/ic_coin.png" alt="Монета" class="coin-counter__icon">
+        </div>
+    </header>
+
+    <main class="app-main">
+        <h1 class="screen-title">Награды</h1>
+
+        <div class="rewards-grid">
+            <div class="reward-card" data-id="reward1" data-price="50">
+                <div class="reward-card__image">
+                    <img src="assets/reward_1.png" alt="Кино">
+                </div>
+                <span class="reward-card__name">Кино</span>
+                <div class="reward-card__price">
+                    <span>20</span>
+                    <img src="assets/ic_coin.png" alt="Монета" class="reward-card__coin">
+                </div>
+            </div>
+
+            <div class="reward-card" data-id="reward2" data-price="100">
+                <div class="reward-card__image">
+                    <img src="assets/reward_4.png" alt="Карманные деньги">
+                </div>
+                <span class="reward-card__name">Карманные деньги</span>
+                <div class="reward-card__price">
+                    <span>25</span>
+                    <img src="assets/ic_coin.png" alt="Монета" class="reward-card__coin">
+                </div>
+            </div>
+
+            <div class="reward-card" data-id="reward3" data-price="150">
+                <div class="reward-card__image">
+                    <img src="assets/reward_3.png" alt="Прогулка в парке">
+                </div>
+                <span class="reward-card__name">Прогулка в парке</span>
+                <div class="reward-card__price">
+                    <span>50</span>
+                    <img src="assets/ic_coin.png" alt="Монета" class="reward-card__coin">
+                </div>
+            </div>
+
+            <div class="reward-card" data-id="reward4" data-price="200">
+                <div class="reward-card__image">
+                    <img src="assets/reward_5.png" alt="Игрушка">
+                </div>
+                <span class="reward-card__name">Игрушка</span>
+                <div class="reward-card__price">
+                    <span>90</span>
+                    <img src="assets/ic_coin.png" alt="Монета" class="reward-card__coin">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="navigation" aria-label="Нижнее меню">
+            <a class="navigation__item" href="index.html" aria-label="Задачи">
+                <img src="assets/галка.png" alt="Задачи">
+            </a>
+            <a class="navigation__item" href="rewards.html" aria-label="Награды">
+                <img src="assets/звезда.png" alt="Награды">
+            </a>
+            <a class="navigation__item" href="pet.html" aria-label="Настройка">
+                <img src="assets/пэт.png" alt="Настройка">
+            </a>
+        </nav>
+    </footer>
+<script src="js/common.js"></script>
+<script src="js/rewards.js"></script>
+</body>
+</html>

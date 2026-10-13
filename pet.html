@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Питомец</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="profile">
+            <div class="avatar"></div>
+            <span>Гоша</span>
+        </div>
+        <div class="coin-counter">
+            <span id="coin-count">0</span>
+            <img src="assets/ic_coin.png" alt="Монета" class="coin-counter__icon">
+        </div>
+    </header>
+
+    <main class="app-main">
+        <h2 class="pet-title">Тушканчик TunTun</h2>
+
+        <div class="pet-image-container">
+            <img src="assets/tushkan1.png" alt="Тушканчик" class="pet-image" id="pet-image">
+        </div>
+
+        <div class="pet-stats">
+            <div class="stat-card" data-hat="1" data-image="assets/tushkan_hat1.png">
+                <img src="assets/hat_1.png" alt="Шляпа 1" class="stat-card__icon">
+            </div>
+            <div class="stat-card" data-hat="2" data-image="assets/tushkan_hat2.png">
+                <img src="assets/hat_2.png" alt="Шляпа 2" class="stat-card__icon">
+            </div>
+            <div class="stat-card" data-hat="3" data-image="assets/tushkan_hat6.png">
+                <img src="assets/hat_6.png" alt="Шляпа 3" class="stat-card__icon">
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <nav class="navigation" aria-label="Нижнее меню">
+            <a class="navigation__item" href="index.html" aria-label="Задачи">
+                <img src="assets/галка.png" alt="Задачи">
+            </a>
+            <a class="navigation__item" href="rewards.html" aria-label="Награды">
+                <img src="assets/звезда.png" alt="Награды">
+            </a>
+            <a class="navigation__item" href="pet.html" aria-label="Питомец">
+                <img src="assets/гайка.png" alt="Питомец">
+            </a>
+        </nav>
+    </footer>
+<script src="js/common.js"></script>
+<script src="js/pet.js"></script>
+</body>
+</html>
